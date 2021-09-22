@@ -2,7 +2,7 @@
 $nama = "Dinda Rachmayanti";
 $alamat = "Tasikmalaya";
 $no_hp = "089516203289";
-$matkul = array('Web Programming','System Design Analysis','Java Programming');
+$matkul = array('','Web Programming','System Design Analysis','Java Programming');
 ?>
 <DOCTYPE html>
 <html>
@@ -24,7 +24,7 @@ $matkul = array('Web Programming','System Design Analysis','Java Programming');
 			echo "<br>";
 			echo "Saya Mengambil mata kuliah sebagai berikut : ";
 			echo "<br>";
-			for($x=0;$x<count($matkul);$x++){
+			for($x=1;$x<count($matkul);$x++){
 			echo "$x." .$matkul[$x]."<br/>";
 }
 		?>
