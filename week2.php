@@ -10,7 +10,10 @@ $matkul = array('','Web Programming','System Design Analysis','Java Programming'
 		<title>Week 2 - Dinda Rachmayanti</title>
 <head>
 <body>
-		<?php
+	<table border="1"> 
+		<tr>
+			<td>
+			<?php
 			echo "~~~~~~~~~~~~~";
 			echo "BIODATA";
 			echo "~~~~~~~~~~~~~";
@@ -28,5 +31,8 @@ $matkul = array('','Web Programming','System Design Analysis','Java Programming'
 			echo "$x." .$matkul[$x]."<br/>";
 }
 		?>
+			</td>
+		</tr>
+	</table>
 </body>
 </html>
