@@ -14,6 +14,8 @@ $ttd = "Dinda Rachmayanti";
 		<tr>
 			<td>
 						<?php
+			echo "<center>" ."<b>" ."Surat Peminjaman" ."</b>" ."</center>";
+			echo "<br>";
 			echo $kota;
 			echo ",";
 			echo date('d F Y');
