@@ -1,30 +1,9 @@
-<?php  
-$nama = "Dinda Rachmayanti";
-$kelas = "MI20B";
-$jurusan = "Manajemen Informatika";
-?>
-<DOCTYPE html>
-<html>
-<head>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body><doctype html="">
+
+
 		<title>Week 1 - Dinda Rachmayanti</title>
-<head>
-<body>
-		<?php
-			echo "Hallo World";
-			echo "<br>"; //untuk memberikan spasi
-			echo $nama;
-			echo "<br>";
-			echo "Hallo ".$nama;
-			echo "<br>";
-			echo "<br>";
-			echo "BIODATA";
-			echo "<br>";
-			echo "<br>";
-			echo "Nama : ".$nama;
-			echo "<br>";
-			echo "Kelas : ".$kelas;
-			echo "<br>";
-			echo "Jurusan : ".$jurusan;
-		?>
-</body>
-</html>
+
+
+		Hallo World<br>Dinda Rachmayanti<br>Hallo Dinda Rachmayanti<br><br>BIODATA<br><br>Nama : Dinda Rachmayanti<br>Kelas : MI20B<br>Jurusan : Manajemen Informatika
+</doctype></body></html>
