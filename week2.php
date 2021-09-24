@@ -15,7 +15,7 @@ $matkul = array('','Web Programming','System Design Analysis','Java Programming'
 			<td>
 			<?php
 			echo "~~~~~~~~~~~~~";
-			echo "BIODATA";
+			echo "<b>"."BIODATA" ."</b>";
 			echo "~~~~~~~~~~~~~";
 			echo "<br>";
 			echo "<br>";
