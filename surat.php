@@ -25,6 +25,8 @@ $ttd = "Dinda Rachmayanti";
 			echo "<br>";
 			echo "Perihal : Permohonan Peminjaman";
 			echo "<br>";
+			echo "Lampiran : -";
+			echo "<br>";
 			echo "<br>";
 			echo "Kepada :";
 			echo "<br>";
