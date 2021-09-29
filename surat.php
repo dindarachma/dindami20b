@@ -34,6 +34,8 @@ $ttd = "Dinda Rachmayanti";
 			echo $instansi[$x]."<br/>";
 }
 			echo "<br>";
+			echo "Dengan Hormat,";
+			echo "<br>";
 			echo "	Dengan surat ini saya atas nama Dinda Rachmayanti untuk permohonan peminjaman sebagai berikut :";
 			echo "<br>";
 			for($x=1;$x<count($barang);$x++){
