@@ -22,7 +22,7 @@ if ($isi["jenis_surat"]=='1'){
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tambah Surat</title>
+	<title>Edit Surat</title>
 	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -31,9 +31,10 @@ if ($isi["jenis_surat"]=='1'){
 	<div class="container">
 	<row>
 		<div class="card">
-		<H2 align="center">Tambah Surat</H2>
+		<H2 align="center">Edit Surat</H2>
 		<div class="card-body">
 			<form class="row g-3" action="edit.php" method="post" name="form1">
+				<input type="hidden" class="form-control" id="id" name="id" value="<?php echo $isi['id']?>" required>
 			  <div class="col-md-6">
 			    <label for="noSurat" class="form-label">Nomor Surat</label>
 			    <input type="text" class="form-control" id="noSurat" name="noSurat" value="<?php echo $isi['no_surat']?>" required>
@@ -82,6 +83,7 @@ if ($isi["jenis_surat"]=='1'){
 
 
 		if(isset($_POST['update'])) {
+			$id=$_POST['id'];
 			$no_surat = $_POST['noSurat'];
 			$jenis_surat = $_POST['jenisSurat'];
 			$tgl_surat = $_POST['tglSurat'];
@@ -90,10 +92,11 @@ if ($isi["jenis_surat"]=='1'){
 			$ttd_menyetujui = $_POST['ttdMenyetujui'];
 
 			//Insert user data info table
-			$result = mysqli_query($con, "UPDATE `tbl_surat` SET `no_surat`='$no_surat', `jenis_surat`='$jenis_surat', `tgl_surat`='$tgl_surat', `ttd_surat`='$ttd_surat', `ttd_mengetahui`='$ttd_mengetahui', `ttd_menyetujui`='$ttd_menyetujui',WHERE 'id'='$id')"); 
+			$result = mysqli_query($con, "UPDATE `tbl_surat` SET `no_surat`='$no_surat', `jenis_surat`='$jenis_surat', `tgl_surat`='$tgl_surat', `ttd_surat`='$ttd_surat', `ttd_mengetahui`='$ttd_mengetahui', `ttd_menyetujui`='$ttd_menyetujui' WHERE `id`='$id'"); 
 
 			//Show message when user added
-			echo "Surat Updated Successfully. <a href='view.php'>List Surat</a>";
+			/*echo "Surat Updated Successfully. <a href='view.php'>List Surat</a>";*/
+			header("Location:view.php");
 		}
 	?>
 </body>
