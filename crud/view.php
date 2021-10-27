@@ -20,17 +20,18 @@ $result = $con->query($sql);
   
   <h1><center><b>Jenis Surat</b></center></h1>
 
-  <table class="table">
-    <thead>
+  <table class="table table-bordered table-striped">
+    <thead class="table-secondary text-center">
       <tr>
         <th>No Surat</th>
         <th>Jenis Surat</th>
         <th>Tanggal Surat</th>
         <th>TTD Surat</th>
+        <th colspan="2">Action</th>
       </tr>
     </thead>
 <?php
-/*$query=mysqli_query($sql,"SELECT * FROM tbl_surat");*/
+
   foreach ($result as $isi){
     if ($isi["jenis_surat"]=='1'){
       $js = "Surat Keputusan";
@@ -48,10 +49,37 @@ $result = $con->query($sql);
     <td><?php echo $js;?></td>
     <td><?php echo $isi['tgl_surat'];?></td>
     <td><?php echo $isi['ttd_surat'];?></td>
+    <td><center><a href ="edit.php?id=<?php echo $isi['id'];?>"><button class="btn btn-warning btn-sm">Edit</a></button></center></td>
+    <td><center><a href="#" data-bs-toggle="modal" data-bs-target="#deletesurat<?php echo $isi ['id'];?>"><button class="btn btn-danger btn-sm">Delete</a></button></center></td>
   </tr>
+  <div class="example-modal">
+    <div id="deletesurat<?php echo $isi ['id'];?>" class="modal fade" role="dialog" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class ="close" data-dismiss="modal" aria-label="Close" ><span aria-hidden="true">&times;</span></button>
+            <h3 class="modal-title">Konfirmasi Delete Data Surat</h3>
+          </div>
+          <form class="row g-3" action="delete.php" method="post" name="form1">
+          <div class="modal-body">
+              <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $isi ['id'];?>" required>
+            <h4 align="center">Apakah Anda Yakin Ingin Menghapus No Surat? <?php echo $isi ['no_surat'];?><strong><span class="grt"></span></strong></h4>
+          </div>
+          <div class="modal-footer">
+           <button id="nodelete" type="button" class="btn btn-danger pull-left" data-bs-dismiss="modal">Cancel</button> 
+           <button type="submit" class="btn btn-primary" name="delete">Delete</button>
+          </div>
+          </form>
+          </div>
+        </div>
+      </div>
+     </div>
+
   <?php
   }
 ?>
+
+
 </body>
 <script src="../assets/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
