@@ -9,6 +9,9 @@ $instansi = array('LP3I', 'Kampus Tasikmalaya', '0265311766');
 $barang = array('','Komputer', 'Proyektor', 'Camera', 'Aula', 'Lab Komputer');
 $ttd = "Dinda Rachmayanti";
 
+?>
+
+<?php 
 if ($con->connect_error) {
 	die("<b>Yahh! Koneksi Database pertama 'db_suratdinda' gagal</b> : " . mysqli_connect_error()); 
 	} 
@@ -31,10 +34,8 @@ else {
 		$js = "Surat Peminjaman";
 	}
 	else ($isi["jenis_surat"]= 4) {
-		die('Jenis Surat Tidak Terdaftar');
+		die('Jenis Surat Bermasalah');
 	}
-
-	$surat
 
 ?>
 
@@ -95,41 +96,5 @@ else {
 </body>
 </html>
  
-<!-- <?php
-if ($db->connect_error) { 
-	die("<b>Yahh! Koneksi Database pertama 'db_suratdinda' gagal</b> : " . mysqli_connect_error()); 
-	} 
 
-}else { 
-	$sql = "SELECT * FROM tbl_surat";
-	$query = mysqli_query($con, 'SELECT * FROM tbl_surat')
-	$result = $conn->query($sql);
-
-	$isi = $result->fetch_assoc();
-	$isi2 = mysli_fetch_array($query);
-
-	echo $isi["no_surat"];
-	echo "<br>";
-	echo "<br>";
-	echo $isi2["no_surat"];
-
-	if ($isi["jenis_surat"]="1") {
-		js = "Surat Keputusan";	
-	}
-	elseif ($isi["jenis_surat"]="2") {
-		js = "Surat Pernyataan";
-	}
-	elseif ($isi["jenis_surat"]="3") {
-		js = "Surat Peminjaman";
-	}
-/*if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["id"]. " - No Surat: " . $row["no_surat]. "  . $row["jenis_surat"]. "<br>";
-  }
-} else {
-  echo "0 results";
-}*/
-
-
-?> -->
+?>
