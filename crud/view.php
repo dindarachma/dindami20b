@@ -17,7 +17,34 @@ $result = $con->query($sql);
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body>
-  
+  <div class="container">
+    <?php
+    $pesan = $_GET['pesan'];
+    $frm = $_GET['frm'];
+    /*echo $pesan;*/
+    if ($pesan =='success' && $frm == 'add'){
+    ?>
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+      <strong>Berhasil!</strong> Selamat Anda Berhasil Menambahkan Data Surat...
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php
+    }else if ($pesan=='success' && $frm=='del'){
+      ?>
+       <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Berhasil!</strong> Anda Berhasil Menghapus...
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php
+    }else if ($pesan=='success' && $frm=='edit'){
+      ?>
+       <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Berhasil!</strong> Anda Berhasil Merubah Data...
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php
+    }
+    ?>
   <h1><center><b>Jenis Surat</b></center></h1>
 
   <table class="table table-bordered table-striped">
@@ -27,6 +54,8 @@ $result = $con->query($sql);
         <th>Jenis Surat</th>
         <th>Tanggal Surat</th>
         <th>TTD Surat</th>
+        <th>TTD Mengetahui</th>
+        <th>TTD Menyetujui</th>
         <th colspan="2">Action</th>
       </tr>
     </thead>
@@ -49,6 +78,8 @@ $result = $con->query($sql);
     <td><?php echo $js;?></td>
     <td><?php echo $isi['tgl_surat'];?></td>
     <td><?php echo $isi['ttd_surat'];?></td>
+    <td><?php echo $isi['ttd_mengetahui'];?></td>
+    <td><?php echo $isi['ttd_menyetujui'];?></td>
     <td><center><a href ="edit.php?id=<?php echo $isi['id'];?>"><button class="btn btn-warning btn-sm">Edit</a></button></center></td>
     <td><center><a href="#" data-bs-toggle="modal" data-bs-target="#deletesurat<?php echo $isi ['id'];?>"><button class="btn btn-danger btn-sm">Delete</a></button></center></td>
   </tr>
@@ -78,8 +109,8 @@ $result = $con->query($sql);
   <?php
   }
 ?>
-
-
+<p><a href="add.php">Tambah Surat</a></p>
+</div>
 </body>
 <script src="../assets/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
