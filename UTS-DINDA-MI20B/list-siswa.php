@@ -71,7 +71,7 @@ $result = $con->query($sql);
     <td><?php echo $isi['jenis_kelamin'];?></td>
     <td><?php echo $isi['agama'];?></td>
     <td><?php echo $isi['sekolah_asal'];?></td>
-    <td><center><a href ="edit-siswa.php?id=<?php echo $isi['id'];?>"><button class="btn btn-warning btn-sm">Edit</a></button></center></td>
+    <td><center><a href ="edit_siswa.php?id=<?php echo $isi['id'];?>"><button class="btn btn-warning btn-sm">Edit</a></button></center></td>
     <td><center><a href="#" data-bs-toggle="modal" data-bs-target="#deletesiswa<?php echo $isi ['id'];?>"><button class="btn btn-danger btn-sm">Delete</a></button></center></td>
   </tr>
   <div class="example-modal">
