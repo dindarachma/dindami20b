@@ -47,7 +47,7 @@ $query = mysqli_query($con, 'SELECT * FROM tbl_agama');
 			      <?php
   					foreach ($query as $agm){
     				?>
-			      <option value="<?=$agm['id']?>"><?=$agm['agama']?></option>
+			      <option value="<?=$agm['agama']?>"><?=$agm['agama']?></option>
 			      <?php
 			  }
 			  ?>
