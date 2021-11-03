@@ -61,7 +61,7 @@ $query = mysqli_query($con, 'SELECT * FROM tbl_agama');
 			  
 			  <div class="col-12">
 			    <button type="submit" class="btn btn-primary" name="simpan">Daftar</button>
-			    <button  href ="#" type="button" class="btn btn-danger">Batal</button>
+			    <button  id="nosimpan" type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
 			  </div>
 			</form>
 		</div>

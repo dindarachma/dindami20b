@@ -18,7 +18,7 @@
     <center><nav>
         <ul>
             <li><a href="form_daftar.php">Daftar Baru</a></li>
-            <li><a href="list-siswa.php">Pendaftar</a></li>
+            <li><a href="list_siswa.php">Pendaftar</a></li>
         </ul>
     </nav></center>
      

@@ -67,12 +67,12 @@ if ($isi["agama"]=='1'){
 			    <label for="Agama" class="form-label">AGAMA</label>
 			    <select id="Agama" name="Agama" class="form-select" value="<?php echo $isi['agama']?>" required> 
 			      <option selected value="<?php echo $isi['agama']?>" ><?php echo $agm?></option>
-			      <option value="1">ISLAM</option>
-			      <option value="2">KRISTEN</option>
-			      <option value="3">PROTESTAN</option>
-			      <option value="4">HINDU</option>
-			      <option value="5">BUDHA</option>
-			      <option value="6">KONGHUCU</option>
+			      <option value="ISLAM">ISLAM</option>
+			      <option value="KRISTEN">KRISTEN</option>
+			      <option value="PROTESTAN">PROTESTAN</option>
+			      <option value="HINDU">HINDU</option>
+			      <option value="BUDHA">BUDHA</option>
+			      <option value="KONGHUCU">KONGHUCU</option>
 			    </select>
 			  </div>
 			 <div class="col-12">
