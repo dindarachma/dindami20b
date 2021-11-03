@@ -62,7 +62,7 @@ $result = $con->query($sql);
 <?php
 
   foreach ($result as $isi){
-    /*if ($isi["agama"]=='1'){
+    if ($isi["agama"]=='1'){
       $agm = "ISLAM";
     }
     else if($isi["agama"]=='2'){
@@ -78,7 +78,7 @@ $result = $con->query($sql);
     }
     else{
       $agm = "Kode Bermasalah";
-    }*/
+    }
     
     ?>
   <tr>

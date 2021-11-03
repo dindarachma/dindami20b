@@ -47,7 +47,7 @@ $query = mysqli_query($con, 'SELECT * FROM tbl_agama');
 			      <?php
   					foreach ($query as $agm){
     				?>
-			      <option value="<?=$agm['id']?>"><?=$agm['agama']?> </option>
+			      <option value="<?=$agm['id']?>"><?=$agm['agama']?></option>
 			      <?php
 			  }
 			  ?>
@@ -61,7 +61,7 @@ $query = mysqli_query($con, 'SELECT * FROM tbl_agama');
 			  
 			  <div class="col-12">
 			    <button type="submit" class="btn btn-primary" name="simpan">Daftar</button>
-			    <button type="button" class="btn btn-danger">Batal</button>
+			    <button  href ="#" type="button" class="btn btn-danger">Batal</button>
 			  </div>
 			</form>
 		</div>
@@ -80,7 +80,7 @@ $query = mysqli_query($con, 'SELECT * FROM tbl_agama');
 			$sekolah_asal = $_POST['SklhAsal'];
 
 			//Insert user data info table
-			$result = mysqli_query($con, "INSERT INTO `tbl_surat` (`id`, `NISN`, `nama`, `alamat`, `jenis_kelamin`, `agama`, `sekolah_asal`) VALUES ('', 'NISN','$nama','$alamat','$jenis_kelamin','$agama','$sekolah_asal')"); 
+			$result = mysqli_query($con, "INSERT INTO `tbl_calon_siswa` (`id`, `NISN`, `nama`, `alamat`, `jenis_kelamin`, `agama`, `sekolah_asal`) VALUES ('', '$NISN','$nama','$alamat','$jenis_kelamin','$agama','$sekolah_asal')"); 
 
 			//Show message when user added
 			header("Location:list_siswa.php?pesan=success&&frm=add");
