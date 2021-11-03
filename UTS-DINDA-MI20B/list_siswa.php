@@ -62,6 +62,23 @@ $result = $con->query($sql);
 <?php
 
   foreach ($result as $isi){
+    if ($isi["agama"]=='1'){
+      $agm = "ISLAM";
+    }
+    else if($isi["agama"]=='2'){
+      $agm = "KRISTEN";
+    }else if ($isi["agama"]=='3'){
+      $agm = "PROTESTAN";
+    }else if ($isi["agama"]=='4'){
+      $agm = "HINDU";
+    }else if ($isi["agama"]=='5'){
+      $agm = "BUDHA";
+    }else if ($isi["agama"]=='6'){
+      $agm = "KONGHUCU";
+    }
+    else{
+      $agm = "Kode Bermasalah";
+    }
     
     ?>
   <tr>
@@ -82,10 +99,10 @@ $result = $con->query($sql);
             <button type="button" class ="close" data-dismiss="modal" aria-label="Close" ><span aria-hidden="true">&times;</span></button>
             <h3 class="modal-title">Konfirmasi Delete Data Surat</h3>
           </div>
-          <form class="row g-3" action="delete-siswa.php" method="post" name="form1">
+          <form class="row g-3" action="delete_siswa.php" method="post" name="form1">
           <div class="modal-body">
               <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $isi ['id'];?>" required>
-            <h4 align="center">Apakah Anda Yakin Ingin Menghapus No Surat? <?php echo $isi ['NISN'];?><strong><span class="grt"></span></strong></h4>
+            <h4 align="center">Apakah Anda Yakin Ingin Menghapus Data Siswa? <?php echo $isi ['NISN'];?><strong><span class="grt"></span></strong></h4>
           </div>
           <div class="modal-footer">
            <button id="nodelete" type="button" class="btn btn-danger pull-left" data-bs-dismiss="modal">Cancel</button> 

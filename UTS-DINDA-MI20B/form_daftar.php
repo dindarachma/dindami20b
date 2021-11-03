@@ -58,27 +58,6 @@ $query = mysqli_query($con, 'SELECT * FROM tbl_agama');
 			    <label for="SklhAsal" class="form-label">SEKOLAH ASAL</label>
 			    <input type="text" class="form-control" id="SklhAsal" name="SklhAsal"  required>
 			  </div>
-			  <!-- <div class="col-md-6">
-			    <label for="inputPassword4" class="form-label">Nomor Surat</label>
-			    <input type="password" class="form-control" id="inputPassword4">
-			  </div> -->
-			  <!-- <div class="col-12">
-			    <label for="tglSurat" class="form-label">Tanggal Surat</label>
-			    <input type="date" class="form-control" id="tglSurat" name="tglSurat" placeholder="mm/dd/yyyy" required>
-			  </div>
-			  <div class="col-12">
-			    <label for="ttdSurat" class="form-label">Pembuat Surat</label>
-			    <input type="text" class="form-control" id="ttdSurat" name="ttdSurat" placeholder="" required>
-			  </div>
-			  <div class="col-md-6">
-			    <label for="ttdMengetahui" class="form-label">Mengetahui</label>
-			    <input type="text" class="form-control" id="ttdMengetahui" name="ttdMengetahui" required>
-			  </div>
-			  
-			  <div class="col-md-6">
-			    <label for="ttdMenyetujui" class="form-label">Menyetujui</label>
-			    <input type="text" class="form-control" id="ttdMenyetujui" name="ttdMenyetujui" required>
-			  </div> -->
 			  
 			  <div class="col-12">
 			    <button type="submit" class="btn btn-primary" name="simpan">Daftar</button>
@@ -104,7 +83,7 @@ $query = mysqli_query($con, 'SELECT * FROM tbl_agama');
 			$result = mysqli_query($con, "INSERT INTO `tbl_surat` (`id`, `NISN`, `nama`, `alamat`, `jenis_kelamin`, `agama`, `sekolah_asal`) VALUES ('', 'NISN','$nama','$alamat','$jenis_kelamin','$agama','$sekolah_asal')"); 
 
 			//Show message when user added
-			header("Location:list-siswa.php?pesan=success&&frm=add");
+			header("Location:list_siswa.php?pesan=success&&frm=add");
 			/*echo "User added Successfully. <a href='form_daftar.php'>List Surat</a>";*/
 		}
 	?>

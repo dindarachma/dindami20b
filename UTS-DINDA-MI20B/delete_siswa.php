@@ -9,7 +9,7 @@ $con = new mysqli("localhost","root", "","pendaftaran_siswa");
       //Insert user data info table
       $result = mysqli_query($con, "DELETE FROM `tbl_calon_siswa` WHERE `tbl_calon_siswa`.`id` = $id" ); 
 
-      header("Location:list-siswa.php?pesan=success&&frm=del");
+      header("Location:list_siswa.php?pesan=success&&frm=del");
     }
 
   ?>

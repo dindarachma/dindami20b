@@ -8,6 +8,8 @@ $id=$_GET['id'];
 $query = mysqli_query($con, "SELECT * FROM `tbl_calon_siswa` where id ='$id'");
 $isi = $query->fetch_assoc();
 
+
+
 if ($isi["agama"]=='1'){
       $agm = "ISLAM";
     }
@@ -25,6 +27,7 @@ if ($isi["agama"]=='1'){
     else{
       $agm = "Kode Bermasalah";
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +44,7 @@ if ($isi["agama"]=='1'){
 		<div class="card">
 		<H2 align="center">Edit Data Siswa</H2>
 		<div class="card-body">
-			<form class="row g-3" action="edit-siswa.php" method="post" name="form1">
+			<form class="row g-3" action="edit_siswa.php" method="post" name="form1">
 				<input type="hidden" class="form-control" id="id" name="id" value="<?php echo $isi['id']?>" required>
 			  <div class="col-md-6">
 			    <label for="nisn" class="form-label">NISN</label>
@@ -76,6 +79,10 @@ if ($isi["agama"]=='1'){
 			    <label for="SklhAsal" class="form-label">SEKOLAH ASAL</label>
 			    <input type="text" class="form-control" id="SklhAsal" name="SklhAsal" value="<?php echo $isi['sekolah_asal']?>" required>
 			  </div>
+			   <div class="col-12">
+			    <button type="submit" class="btn btn-primary" name="update">Update</button>
+			    <button type="button" class="btn btn-danger">Batal</button>
+			  </div>
 			</form>
 		</div>
 		</div>
@@ -98,7 +105,7 @@ if ($isi["agama"]=='1'){
 
 			//Show message when user added
 			/*echo "Surat Updated Successfully. <a href='view.php'>List Surat</a>";*/
-			header("Location:form_daftar.php?pesan=success&&frm=edit");
+			header("Location:list_siswa.php?pesan=success&&frm=edit");
 		}
 	?>
 </body>
