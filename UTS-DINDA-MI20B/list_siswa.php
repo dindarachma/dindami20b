@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 //Buat Koneksinya
-$con = new mysqli("localhost","root", "","pendaftaran_siswa");
+$con = new mysqli("localhost","root", "" ,"pendaftaran_siswa");
 $tgl = date ('d F Y');
 
 $sql = "SELECT * FROM tbl_calon_siswa";
@@ -62,7 +62,7 @@ $result = $con->query($sql);
 <?php
 
   foreach ($result as $isi){
-    if ($isi["agama"]=='1'){
+    /*if ($isi["agama"]=='1'){
       $agm = "ISLAM";
     }
     else if($isi["agama"]=='2'){
@@ -78,7 +78,7 @@ $result = $con->query($sql);
     }
     else{
       $agm = "Kode Bermasalah";
-    }
+    }*/
     
     ?>
   <tr>
@@ -88,7 +88,8 @@ $result = $con->query($sql);
     <td><?php echo $isi['jenis_kelamin'];?></td>
     <td><?php echo $isi['agama'];?></td>
     <td><?php echo $isi['sekolah_asal'];?></td>
-    <td><center><a href ="edit_siswa.php?id=<?php echo $isi['id'];?>"><button class="btn btn-warning btn-sm">Edit</a></button></center></td>
+    <td><center><a href ="edit_siswa.php?id=<?php echo $isi['id'];?>"><button class="btn btn-warning btn-sm">
+    Edit</a></button></center></td>
     <td><center><a href="#" data-bs-toggle="modal" data-bs-target="#deletesiswa<?php echo $isi ['id'];?>"><button class="btn btn-danger btn-sm">Delete</a></button></center></td>
   </tr>
   <div class="example-modal">
@@ -117,7 +118,7 @@ $result = $con->query($sql);
     <?php
     }
     ?>
-    <p><a href="form_daftar.php">Daftar Siswa</a></p>
+    <p><a href="form_daftar.php"><button class="btn btn-primary btn-sm">+Daftar Siswa</button></a></p>
     </div>
 </body>
 <script src="../assets/js/bootstrap.min.js"></script>
