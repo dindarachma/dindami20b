@@ -89,7 +89,7 @@ $hasil = $ctrl->index();
     <?php
     }
     ?>
-    <p><a href="form_daftar.php"><button class="btn btn-primary btn-sm">+Daftar Siswa</button></a></p>
+    <p><a href="add.php"><button class="btn btn-primary btn-sm">+Daftar Siswa</button></a></p>
     </div>
 </body>
 <script src="../assets/js/bootstrap.min.js"></script>
