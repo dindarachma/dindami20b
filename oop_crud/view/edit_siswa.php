@@ -49,7 +49,7 @@ if ($isi["agama"]=='1'){
 		<div class="card">
 		<H2 align="center">Edit Data Siswa</H2>
 		<div class="card-body">
-			<form class="row g-3" action="edit_siswa.php" method="post" name="form1">
+			<form class="row g-3" action="<?php echo $ctrl->updateSiswa()?>" method="post" name="form1">
 				<input type="hidden" class="form-control" id="id" name="id" value="<?php echo $isi['id']?>" required>
 			  <div class="col-md-6">
 			    <label for="nisn" class="form-label">NISN</label>
@@ -93,26 +93,7 @@ if ($isi["agama"]=='1'){
 		</div>
 	</row>
 	</div>
-	<?php
-
-
-		if(isset($_POST['update'])) {
-			$id=$_POST['id'];
-			$NISN = $_POST['nisn'];
-			$nama = $_POST['Nama'];
-			$alamat = $_POST['Alamat'];
-			$jenis_kelamin = $_POST['jnsKelamin'];
-			$agama = $_POST['Agama'];
-			$sekolah_asal = $_POST['SklhAsal'];
-
-			//Insert user data info table
-			$result = mysqli_query($con, "UPDATE `tbl_calon_siswa` SET `NISN`='$NISN', `nama`='$nama', `alamat`='$alamat', `jenis_kelamin`='$jenis_kelamin', `agama`='$agama', `sekolah_asal`='$sekolah_asal' WHERE `id`='$id'"); 
-
-			//Show message when user added
-			/*echo "Surat Updated Successfully. <a href='view.php'>List Surat</a>";*/
-			header("Location:content.php?pesan=success&&frm=edit");
-		}
-	?>
+	
 </body>
 <script src="../assets/js/bootstrap.min.js"></script>
 

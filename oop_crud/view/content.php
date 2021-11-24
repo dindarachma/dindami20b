@@ -69,9 +69,9 @@ $hasil = $ctrl->index();
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class ="close" data-dismiss="modal" aria-label="Close" ><span aria-hidden="true">&times;</span></button>
-            <h3 class="modal-title">Konfirmasi Delete Data Surat</h3>
+            <h3 class="modal-title">Konfirmasi Delete Data Siswa</h3>
           </div>
-          <form class="row g-3" action="delete_siswa.php" method="post" name="form1">
+          <form class="row g-3" action="<?php $ctrl->hapusSiswa()?>" method="post" name="form1">
           <div class="modal-body">
               <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $isi ['id'];?>" required>
             <h4 align="center">Apakah Anda Yakin Ingin Menghapus Data Siswa? <?php echo $isi ['NISN'];?><strong><span class="grt"></span></strong></h4>

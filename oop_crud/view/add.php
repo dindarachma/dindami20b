@@ -26,7 +26,7 @@ $query = $ctrl->getAgamaData();
 		<div class="card">
 		<H2 align="center">Tambah Siswa</H2>
 		<div class="card-body">
-			<form class="row g-3" action="<?php $ctrl->simpanSiswa();?>" method="post" name="form1">
+			<form class="row g-3" action="<?php echo $ctrl->simpanSiswa();?>" method="post" name="form1">
 			  <div class="col-md-6">
 			    <label for="nisn" class="form-label">NISN</label>
 			    <input type="text" class="form-control" id="nisn" name="nisn" required>
