@@ -66,9 +66,9 @@ class Siswa{
 			}
 		}
 
-		function updateSiswa(){
+		function updateSiswa($id){
 			if(isset($_POST['update'])) {
-				$id=$_POST['id'];
+				/*$id=$_POST['id'];*/
 				$NISN = $_POST['nisn'];
 				$nama = $_POST['Nama'];
 				$alamat = $_POST['Alamat'];
@@ -76,7 +76,7 @@ class Siswa{
 				$agama = $_POST['Agama'];
 				$sekolah_asal = $_POST['SklhAsal'];
 
-			$data[] = array(
+			$data = array(
 						 'NISN'			=>$NISN,
 						 'nama'			=>$nama,
 						 'alamat'		=>$alamat,

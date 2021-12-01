@@ -64,7 +64,7 @@ class siswa_model {
 			{
 				$setPart[] = $key. "=:".$key;
 			}
-			$sql = "UPDATE tbl_calon_siswa SET ".implode(', ', $setPart)."WHERE id = :id";
+			$sql = "UPDATE tbl_calon_siswa SET ".implode(', ', $setPart)." WHERE id = :id";
 			$row = $this->db->prepare($sql);
 			$row -> bindValue(':id', $id);
 			foreach ($data as $param => $val) 
