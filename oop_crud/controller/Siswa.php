@@ -11,8 +11,14 @@ class Siswa{
 		}
 
 		function index(){
-			$hasil = $this->model->tampil_data();
-			return $hasil;
+			session_start();
+			if (!empty($_SESSION)) {
+				$hasil = $this->model->tampil_data();
+				return $hasil;
+			}else{
+				header("Location:login.php");
+			}
+			
 		}
 		function getData($id){
 			$hasil = $this->model->getData($id);
@@ -91,6 +97,14 @@ class Siswa{
 			}else{
 				header("Location:content.php?pesan=failed&frm=edit");
 			}
+		}
+	}
+
+	function Logout(){
+		if (isset($_POST['logout'])) {
+			session_start();
+   			session_destroy();
+    		header("Location:login.php?pesan=success&frm=logout");
 		}
 	}
 }

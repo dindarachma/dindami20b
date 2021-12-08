@@ -2,9 +2,7 @@
 include'../controller/Siswa.php';
 /*$isi = $hasil;*/
 $ctrl = new Siswa();
-
 $hasil = $ctrl->index();
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,6 +13,61 @@ $hasil = $ctrl->index();
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body>
+   <div class="container">
+    <?php
+    $pesan = $_GET['pesan'];
+    $frm = $_GET['frm'];
+    /*echo $pesan;*/
+    if ($pesan =='success' && $frm == 'add'){
+    ?>
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+      <strong>Berhasil!</strong> Selamat Anda Berhasil Menambahkan Data Siswa...
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php
+    }else if ($pesan=='success' && $frm=='del'){
+      ?>
+       <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Berhasil!</strong> Anda Berhasil Menghapus...
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php
+    }else if ($pesan=='success' && $frm=='edit'){
+      ?>
+       <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Berhasil!</strong> Anda Berhasil Merubah Data...
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php
+    }else if  ($pesan=='success' && $frm=='login'){
+      ?>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Berhasil!</strong> Anda Berhasil Login...
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php
+    }
+    ?>
+  <div class="example-modal">
+    <div id="logout" class="modal fade" role="dialog" style="display:none;">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <form class="row g-3" action="<?php echo $ctrl->Logout()?>" method="post" name="form1">
+              <div class="modal-header">
+                <h3 class="modal-title">Log out</h3>
+              </div>
+               <div class="modal-body">
+            <h5 align="center">Apakah Anda Yakin Ingin Keluar?<strong><span class="grt"></span></strong></h5>
+          </div>
+           <div class="modal-footer">
+           <button id="nologout" type="button" class="btn btn-danger pull-left" data-bs-dismiss="modal">Cancel</button> 
+           <button type="submit" class="btn btn-primary" name="logout" >Logout</button>
+          </div>
+            </form>
+         </div>
+      </div>
+    </div>
+  </div>
   <div class="container">
   <h1><center><b>LIST SISWA</b></center></h1>
 
@@ -90,7 +143,8 @@ $hasil = $ctrl->index();
     }
     ?>
     <p><a href="add.php"><button class="btn btn-primary btn-sm">+Daftar Siswa</button></a></p>
-    <p><a href="logout.php"><button class="btn btn-danger btn-sm">->Logout</button></a></p>
+    <a href="#" class="btn btn-danger btn-sm action-button" role="button" data-bs-toggle="modal" data-bs-target="#logout"><span class="fa fa-sign-out">Logout</span></a>
+    
     </div>
 </body>
 <script src="../assets/js/bootstrap.min.js"></script>

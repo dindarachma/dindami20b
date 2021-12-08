@@ -20,13 +20,16 @@ $ctrl = new Auth();
             </div>
             <div class="col-sm-4">
                 <br/><br/>
-                <div id="logout">
-                    <?php if(isset($_GET['signout'])){?>
-                        <div class="alert alert-success">
-                            <small>Anda Berhasil Logout...</small>
+                     <?php       
+                            if (isset ($_GET['pesan'])=='success' && isset ($_GET['frm'])=='logout'){
+                          ?>
+                          <div class="alert alert-success alert-dismissible fade show" role="alert">
+                          <strong>Berhasil!</strong> Anda Berhasil Logout...
+                         <!--  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
                         </div>
-                    <?php }?>
-                </div>
+                        <?php
+                        }
+                        ?>
                 <div id="notifikasi">
                     <div class="alert alert-danger">
                         <small>Login Anda Gagal, Periksa Kembali Username dan Password</small>
