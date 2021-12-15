@@ -27,7 +27,9 @@ class Siswa{
 
 		function getAgamaData(){
 			$hasil = $this->model->getAgamaData();
-			return $hasil;
+
+			echo json_encode($hasil);
+			
 		}
 
 		function hapusSiswa(){
@@ -69,6 +71,19 @@ class Siswa{
 				}else{
 					header("Location:content.php?pesan=failed&frm=add");
 				}
+			}
+		}
+
+		function simpanAgama(){
+			$hasil = $_POST['Agama'];
+			$data[]=array(
+				'Agama'  =>$hasil,
+			);
+			$result = $this->model->simpanAgamaData($data);
+			if ($result) {
+				echo '200';
+			}else{
+				echo '300';
 			}
 		}
 
